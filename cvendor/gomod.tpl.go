@@ -12,6 +12,7 @@ require (
 	github.com/obase/center {{.Version}}
 	github.com/obase/clickhouse {{.Version}}
 	github.com/obase/conf {{.Version}}
+    github.com/obase/httpgw {{.Version}}
 	github.com/obase/kafka {{.Version}}
 	github.com/obase/log {{.Version}}
 	github.com/obase/mongo {{.Version}}
