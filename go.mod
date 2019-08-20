@@ -16,5 +16,3 @@ require (
 	github.com/obase/mysql v1.4.1
 	github.com/obase/redis v1.4.1
 )
-
-exclude github.com/gin-gonic/gin v1.4.0
