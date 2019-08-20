@@ -21,7 +21,7 @@ func main() {
 			if c.Name == os.Args[1] {
 				kits.Infof("%v %v start\n", c.Name, os.Args[2:])
 				start := time.Now().UnixNano()
-				c.Process(os.Args[2:]...)
+				c.Process()
 				end := time.Now().UnixNano()
 				kits.Infof("%v %v finish, used time(ms): %v\n", c.Name, os.Args[2:], (end-start)/1000000)
 				return
@@ -46,7 +46,7 @@ func usage() string {
 
 type cmd struct {
 	Name    string
-	Process func(args ...string)
+	Process func()
 	Usage   func() string
 }
 
