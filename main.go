@@ -17,8 +17,10 @@ func init() {
 func main() {
 
 	if len(os.Args) > 1 && os.Args[1] != "help" {
+		cmd := os.Args[1]
+		os.Args = os.Args[1:]
 		for _, c := range all {
-			if c.Name == os.Args[1] {
+			if c.Name == cmd {
 				kits.Infof("%v %v start\n", c.Name, os.Args[2:])
 				start := time.Now().UnixNano()
 				c.Process()
