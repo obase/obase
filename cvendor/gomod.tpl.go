@@ -14,8 +14,8 @@ require (
 	github.com/obase/conf {{.Version}}
     github.com/obase/httpgw {{.Version}}
     github.com/obase/httpgw-gin {{.Version}}
-	github.com/obase/kafka {{.Version}}
-	github.com/obase/log {{.Version}}
+    github.com/obase/kafka {{.Version}}
+    github.com/obase/log {{.Version}}
 	github.com/obase/mongo {{.Version}}
 	github.com/obase/mysql {{.Version}}
 	github.com/obase/redis {{.Version}}
