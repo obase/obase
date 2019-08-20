@@ -20,4 +20,7 @@ require (
 	github.com/obase/mysql {{.Version}}
 	github.com/obase/redis {{.Version}}
 )
+exclude (
+    github.com/gin-gonic/gin {{.Version}}
+)
 `))

@@ -1,30 +1,42 @@
 package cvendor
 
 import (
+	"flag"
 	"github.com/obase/obase/kits"
 	"os"
 	"os/exec"
 	"path/filepath"
 )
 
-func Process(args ...string) {
-	var version string
-	var basedir string
-	if len(args) > 1 {
-		basedir = args[1]
-	} else {
-		basedir, _ = os.Getwd()
-	}
-	if len(args) > 0 {
-		version = args[0]
-	} else {
-		version = "latest"
-	}
+func cwd() string {
+	cwd, _ := os.Getwd()
+	return cwd
+}
+
+func Process() {
+	var (
+		version string
+		basedir string
+		use4jx3 bool
+	)
+	flag.StringVar(&version, "version", "latest", "specified the version of cvendor")
+	flag.StringVar(&basedir, "basedir", cwd(), "specified the basedir of cvendor")
+	flag.BoolVar(&use4jx3, "use4jx3", false, "specified used for jx3 vendor")
 
 	if !kits.IsExists(basedir) {
 		os.MkdirAll(basedir, os.ModePerm)
 	}
 	process(basedir, version)
+	// 事后处理
+	if use4jx3 {
+		processForJX3(basedir)
+	}
+}
+
+func processForJX3(basedir string) {
+	if err := os.RemoveAll(filepath.Join(basedir, "github.com", "obase", "vendor", "github.com", "gin-gonic")); err != nil {
+		panic(err)
+	}
 }
 
 func process(dir string, version string) {
