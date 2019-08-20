@@ -22,6 +22,7 @@ func Process() {
 	flag.StringVar(&version, "version", "latest", "specified the version of cvendor")
 	flag.StringVar(&basedir, "basedir", cwd(), "specified the basedir of cvendor")
 	flag.BoolVar(&use4jx3, "use4jx3", false, "specified used for jx3 vendor")
+	flag.Parse()
 
 	if !kits.IsExists(basedir) {
 		os.MkdirAll(basedir, os.ModePerm)
