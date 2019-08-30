@@ -41,6 +41,9 @@ func processForJX3(basedir string) {
 	if err := os.RemoveAll(filepath.Join(basedir, "github.com", "obase", "vendor", "github.com", "gin-contrib")); err != nil {
 		panic(err)
 	}
+	if err := os.RemoveAll(filepath.Join(basedir, "github.com", "obase", "vendor", "github.com", "DataDog")); err != nil {
+		panic(err)
+	}
 }
 
 func process(dir string, version string) {
