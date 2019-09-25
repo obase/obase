@@ -25,7 +25,7 @@ func main() {
 				start := time.Now().UnixNano()
 				c.Process()
 				end := time.Now().UnixNano()
-				kits.Infof("%v %v finish, used time(ms): %v\n", c.Name, os.Argsd , (end-start)/1000000)
+				kits.Infof("%v %v finish, used time(ms): %v\n", c.Name, os.Args , (end-start)/1000000)
 				return
 			}
 		}
