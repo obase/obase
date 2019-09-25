@@ -21,11 +21,11 @@ func main() {
 		os.Args = os.Args[1:]
 		for _, c := range all {
 			if c.Name == cmd {
-				kits.Infof("%v %v start\n", c.Name, os.Args[2:])
+				kits.Infof("%v %v start\n", c.Name, os.Args)
 				start := time.Now().UnixNano()
 				c.Process()
 				end := time.Now().UnixNano()
-				kits.Infof("%v %v finish, used time(ms): %v\n", c.Name, os.Args[2:], (end-start)/1000000)
+				kits.Infof("%v %v finish, used time(ms): %v\n", c.Name, os.Argsd , (end-start)/1000000)
 				return
 			}
 		}
