@@ -18,6 +18,7 @@ require (
     github.com/obase/kafka {{.Version}}
     github.com/obase/log {{.Version}}
 	github.com/obase/mongo {{.Version}}
+	github.com/obase/mongodb {{.Version}}
 	github.com/obase/mysql {{.Version}}
 	github.com/obase/redis {{.Version}}
 )

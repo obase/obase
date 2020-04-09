@@ -14,6 +14,7 @@ import (
 	_ "github.com/obase/kafka"
 	_ "github.com/obase/log"
 	_ "github.com/obase/mongo"
+	_ "github.com/obase/mongodb"
 	_ "github.com/obase/mysql"
 	_ "github.com/obase/redis"
 )
